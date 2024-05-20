@@ -4,6 +4,7 @@
 # Installation
 
 - Download repository
+- Extract repository
 - Run composer install
 - Create Database db_api_dinkes
 - Copy .env.example file and rename to .env
