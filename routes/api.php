@@ -16,11 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/api', [App\Http\Controllers\Controller::class, 'index']);
 
-Route::group(['middleware' => ['only.json', 'throttle:900000000,1']], function() {
-    
-});
-
-Route::group(['middleware' => ['access.cors', 'throttle:900000000,1']], function() {
+Route::group([
+    'prefix' => 'api',
+    'middleware' => [
+        'access.cors', 
+        'throttle:900000000,1'
+    ]
+], function() {
     Route::get('/hospitals', [App\Http\Controllers\HospitalsController::class, 'getDataHospitals'])
         ->name('hospitals');
     Route::get('/connected_hospitals', [App\Http\Controllers\ConnectedHospitalsController::class, 'getDataConnectedHospitals'])
