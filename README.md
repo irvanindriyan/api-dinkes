@@ -1,3 +1,6 @@
+# Requirements
+- PHP version 7.2
+
 # Installation
 
 - Download repository

@@ -17,7 +17,7 @@ class Controller extends BaseController
     {
         try {
             return response()->json(
-                FunctionHelpers::resOk('API Version 1 Laravel '.Application::VERSION.' (PHP '.PHP_VERSION.')'), 
+                FunctionHelpers::resOk('API Version 1 Laravel ' . Application::VERSION . ' (PHP ' . PHP_VERSION . ')'), 
                 200);
         } catch (Exception $e) {
             return response()->json(
