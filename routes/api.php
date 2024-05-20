@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\Controller::class, 'index']);
+Route::get('/api', [App\Http\Controllers\Controller::class, 'index']);
 
 Route::group(['middleware' => ['only.json', 'throttle:900000000,1']], function() {
     
