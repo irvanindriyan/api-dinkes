@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Hide a specific file
+    <Files ~ "(.php|.phtml|.html|.shtml|.phar|.inc|.so|.exe)">
+        Order allow,deny
+        Deny from all
+        ErrorDocument 403 /forbidden
+    </Files>
+</IfModule>
